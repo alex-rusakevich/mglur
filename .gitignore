@@ -3,3 +3,4 @@ static/css
 /static/js
 /index.html
 ftp_up.bat
+package-lock.json
