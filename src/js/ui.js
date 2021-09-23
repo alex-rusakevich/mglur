@@ -69,6 +69,12 @@ if (getCookie('theme') == 'light') {
 //Pull to refresh
 const ptr = PullToRefresh.init({
     mainElement: '#content-panel',
+    triggerElement: '#content-panel',
+
+    shouldPullToRefresh: function () {
+        return !this.mainElement.scrollTop;
+    },
+
     distReload: 60,
 
     instructionsPullToRefresh: 'Потяните вниз, чтобы перезагрузить страницу',
