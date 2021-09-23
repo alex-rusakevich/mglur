@@ -1,0 +1,36 @@
+@app-blue: #026fd5;
+@app-dark-grey: #1E2323;
+@app-grey: #343e40;
+@app-text-grey: #9A9C9E;
+@app-yellow: #f0f01a;
+@app-white: #f8f9f8;
+@app-light-grey: #DFE0DF;
+
+.app-grey-filter() {
+    filter: invert(66%) sepia(5%) saturate(99%) hue-rotate(156deg) brightness(94%) contrast(92%);
+}
+
+.app-white-filter() {
+    filter: invert(99%) sepia(9%) saturate(0%) hue-rotate(241deg) brightness(120%) contrast(100%);
+}
+
+.app-blue-filter() {
+    filter: invert(32%) sepia(51%) saturate(3028%) hue-rotate(194deg) brightness(86%) contrast(99%);
+}
+
+.app-yellow-filter() {
+    filter: invert(90%) sepia(54%) saturate(1040%) hue-rotate(346deg) brightness(110%) contrast(88%);
+}
+
+.app-dark-grey-filter() {
+    filter: invert(13%) sepia(6%) saturate(707%) hue-rotate(131deg) brightness(94%) contrast(97%);
+}
+
+// Remove host's branding
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{ display: none !important; }
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}

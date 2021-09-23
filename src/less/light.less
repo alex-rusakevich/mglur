@@ -1,0 +1,373 @@
+@import (less) "main";
+
+// ========= Global CSS ===========
+body {
+    background-color: @app-dark-grey !important;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+p {
+    color: @app-dark-grey;
+    margin-bottom: 0 !important;
+}
+
+button {  
+    box-shadow: none !important;
+}
+
+.hideme {
+    display: none;
+}
+
+@media only screen and (max-device-width: 470px) {
+    div.schedule.container {
+        padding-right: 5mm !important;
+    }
+
+    div.room p {
+        margin-left: -2mm;
+    }
+
+    img.file-icon {
+        .app-grey-filter;
+        margin-left: -2mm;
+    }
+
+    p.lesson-name {
+        padding-right: 5mm;
+    }
+}
+// ================================
+
+// ===== Modal window styling =====
+div.modal-content {
+    button.btn-close {
+        .app-grey-filter;
+    }
+
+    p.select-caption {
+        color: @app-dark-grey;
+    }
+
+    select {
+        all: unset;
+        background-color: @app-white;
+        border: 2px solid @app-text-grey;
+        border-radius: 1mm;
+        padding: 1mm;
+        margin-top: 1mm;
+        width: 98%;
+    }
+
+    select:focus {
+        border: 2px solid @app-blue;
+    }
+
+    select[disabled] {
+        background-color: @app-light-grey;
+    }
+
+    p.select-caption {
+        color: @app-dark-grey;
+    }
+
+    input.settings-body-checkbox {
+        transform: scale(1.5);
+        position: absolute;
+        right: 5%;
+        margin-top: 1.5mm;
+    }
+
+    background-color: @app-white;
+    color: @app-dark-grey;
+}
+
+button.btn-primary {
+    background-color: @app-blue;
+}
+
+// Info modal
+img.info-list-marker {
+    .app-blue-filter;
+    margin-right: 2mm;
+    margin-left: 1mm;
+    margin-top: -1mm;
+}
+// ================================
+
+// ======== Navbar styling ========
+#app_navbar {
+    padding-top: 0mm;
+    padding-bottom: 0mm;
+    border-bottom: 3px solid @app-blue;
+}
+
+div#navbarSupportedContent li {
+    cursor: pointer;
+}
+
+#logo_img {
+    width: 30px;
+    height: 35px;
+    margin-right: 4mm;
+}
+
+// Navigation icons
+#set-inf-buttons img {
+    width: 32px;
+}
+
+.icon-nav img {
+    .app-grey-filter;
+
+    display: inline-block; 
+    width: 18px;
+    height: 18px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.icon-nav a {
+    display: inline-block;
+}
+
+li.nav-item button.nav-link.active {
+    color: @app-white;
+
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
+    -moz-box-shadow:    0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
+    box-shadow:         0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
+}
+
+ul.nav.nav-tabs {
+    border-color: @app-white;
+}
+
+ul.dropdown-menu {
+    li {
+        position: relative;
+    }
+
+    margin-top: 0px !important;
+}
+
+button.close-button {
+    all: unset;
+    position: absolute;
+    right: 5%;
+
+    img {
+        .app-grey-filter;
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.navbar-toggler {
+    border: 0 !important;
+    margin-right: -3mm;
+
+    
+    transition-duration: 0.35s !important;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+// ================================
+
+// ===== Date (content) panels ====
+#main_cont {
+    padding: 0px;
+    max-width: 960px;
+    height: 100%;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+div.row.lesson {
+    padding-right: 3mm !important;
+}
+
+div#content-panel {
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+    position: relative;
+    scrollbar-width: thin;
+    height: calc(100% - 94px);
+    background-color: #fff;
+}
+
+.nav-tabs > li.active > a {
+    background-color: @app-white;
+    border-bottom: 0px;
+    margin-bottom: 0px;
+    color: @app-white;
+}
+
+.nav.nav-tabs {
+    margin-top: 3px;
+    border-bottom: 3px solid #fff !important;
+}
+
+#date-panel {
+    background-color: @app-light-grey;
+
+    .nav-tabs {
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        position: relative;
+
+        scrollbar-width: thin;
+    }
+
+    .nav-tabs .nav-link {
+        white-space: nowrap;
+    }
+
+    .nav-link {
+        color: @app-dark-grey;
+        border: 0px;
+    }
+
+    .nav-link:not(.active):hover {
+        background-color: @app-text-grey;
+        border: 0;
+    }
+
+    .nav-link.active {
+        color: @app-dark-grey;
+    }
+}
+
+a.dropdown-item:active {
+    background-color: @app-blue !important;
+}
+// ================================
+
+// ======= Styling notes icon =====
+.icon-filter {
+    .app-grey-filter;
+    width: 24px;
+    height: 24px;
+}
+
+@icon-transit-dur: 0.3s;
+
+img.file-icon:hover {
+    .app-grey-filter();
+    transition-duration: @icon-transit-dur;
+}
+
+img.file-icon {
+    .app-dark-grey-filter();
+    transition-duration: @icon-transit-dur;
+}
+// ================================
+
+// ======== Styling schedule ======
+div .tab-pane {
+    padding-top: 3mm;
+}
+
+.day-text {
+    color: @app-dark-grey;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.day-title {
+    padding-right: 3mm;
+}
+
+hr.les-sep {
+    color: @app-dark-grey;
+    margin: 0;
+    margin-top: 3mm;
+    margin-right: -3mm;
+    margin-left: -3mm;
+}
+
+hr.same-time-les-sep {
+    color: @app-dark-grey;
+    margin: 0;
+    margin-top: 3mm;
+    margin-right: -3mm;
+    margin-left: 16.5%;
+}
+
+.room {
+    padding-left: 0 !important;
+}
+
+div.lesson {
+    margin-top: 3mm;
+}
+
+.teacher {
+    color: @app-text-grey;
+}
+
+.lesson-name {
+    color: @app-dark-grey;
+    font-weight: bold;
+}
+
+.day {
+    margin-bottom: 3mm;
+}
+
+.lesson {
+    padding-right: 3mm;
+}
+// ================================
+
+// ====== Custom scrollbar ========
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #000000;
+}
+::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+// ================================
+
+div.ptr--ptr {
+    background-color: @app-white;
+    color: @app-text-grey;
+}
