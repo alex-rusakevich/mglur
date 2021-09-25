@@ -30,7 +30,14 @@ function XLS_to_JSON(file_in, to_dom = true) {
 
     const short_facult_name = {
         "факультета Кит.яз.": "ФКЯиК",
-        "факультета Меж.ком.": "ФМК"
+        "факультета Меж.ком.": "ФМК",
+        "факультета Англ.яз.": "ФАЯ",
+        "факультета Перев. ф-т": "ПФ",
+        "факультета магистр.": "М-ПФ(ИО)",
+        "факультета Перев И.О.": "ПФ(ИО)",
+        "факультета Нем.яз.": "ФНЯ",
+        "факультета ФРЯ (исп.)": "ФРЯ(И)",
+        "факультета ФРЯ (фр.)": "ФРЯ(Ф)"
     };
 
     function read_cell(wsh, cl) {
@@ -78,7 +85,7 @@ function XLS_to_JSON(file_in, to_dom = true) {
         //Students schedule
         json_result["info"]["type"] = "student";
         json_result["info"]["faculty"] = short_facult_name[read_cell(worksheet, "A1").match(/(?<=, ).+(?= на)/g)];
-        json_result["info"]["group"] = read_cell(worksheet, "C2").match(/.+(?= )/g)[0];
+        json_result["info"]["group"] = read_cell(worksheet, "C2").match(/\d+(\/\d+)?(?=(\s|$|\n))/g)[0];
 
         var day = undefined;
         var last_str = "";
