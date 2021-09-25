@@ -180,7 +180,7 @@ function JSON_to_DOM(json_in) {
         + json_in["info"]["date"] + '</button></li>';
     $("ul.nav.nav-tabs[role='tablist']").append(new_tab);
 
-    new_tab = '<div class="tab-pane fade" id="content-xls' + xls_windows_opened + '" role="tabpanel" aria-labelledby="profile-tab"><div class="schedule container" id="xls-container"></div></div>';
+    new_tab = '<div class="tab-pane fade" id="content-xls' + xls_windows_opened + '" role="tabpanel" aria-labelledby="profile-tab"><div class="schedule container-lg" id="xls-container"></div></div>';
     $("div.tab-content#content-panel").append(new_tab);
 
     for (let day_raw in json_in) {
