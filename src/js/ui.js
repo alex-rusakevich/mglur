@@ -1,14 +1,14 @@
 /* Pure UI work */
 function minusRemover() {
-    if ($(window).width() < 403) {
-        $("div.row.lesson div:first-child p").each(function () {
-            var prev_text = $(this).text()
-            $(this).text(prev_text.replace(/ - /, " "));
+    if ($(window).width() < 702) {
+        $("p.time").each(function () {
+            var prev_text = $(this).text();
+            $(this).text(prev_text.replace(/ - /, "\n"));
         });
     } else {
-        $("div.row.lesson div:first-child p").each(function () {
+        $("p.time").each(function () {
             var prev_text = $(this).text()
-            $(this).text(prev_text.replace(/(?<=\d) (?=\d)/, " - "));
+            $(this).text(prev_text.replace(/(?<=\d)\n(?=\d)/, " - "));
         });
     }
 }
