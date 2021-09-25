@@ -1,4 +1,18 @@
 /* Pure UI work */
+function minusRemover() {
+    if ($(window).width() < 702) {
+        $("p.time").each(function () {
+            var prev_text = $(this).text();
+            $(this).text(prev_text.replace(/ - /, "\n"));
+        });
+    } else {
+        $("p.time").each(function () {
+            var prev_text = $(this).text()
+            $(this).text(prev_text.replace(/(?<=\d)\n(?=\d)/, " - "));
+        });
+    }
+}
+
 $('nav#date-panel').bind("DOMSubtreeModified", function () {
     $('nav#date-panel button').on('shown.bs.tab', function (e) { // Change title on tab change
         $('span#title').text($(e.target).attr("schedule_data"));
@@ -51,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $("select#theme-select", this).html("<option value='dark' selected='selected'>Тёмная</option>" +
             "<option value='light'>Светлая</option>");
     }
+
+    minusRemover();
 });
 
 $('select#theme-select').on('change', function () {
@@ -85,3 +101,7 @@ const ptr = PullToRefresh.init({
         window.location.reload();
     }
 });
+
+window.onresize = function () {
+    minusRemover();
+};

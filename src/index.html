@@ -14,7 +14,7 @@
 
 <body>
     {% import 'preloader.njk' as prel %}
-    {{ prel.preloader('#1E2323') }}
+    {{ prel.preloader('#1E2323', 'filter: invert(71%) sepia(0%) saturate(794%) hue-rotate(247deg) brightness(87%) contrast(92%);') }}
 
     <script src="static/js/themes.js"></script>
 
@@ -42,9 +42,9 @@
                             href="http://raspisanie.mslu.by/schedule/reports/publicreports/schedulelistteacherreport">по этой</a>
                     </p><br>
                     <p>
-                        <img class="info-list-marker" src="static/img/info-list-marker.svg">Сайтом для сохранения
+                        <img class="danger-list-marker" src="static/img/info-list-marker.svg">Сайтом для сохранения
                         введенной Вами информации (номер группы, имя преподавателя, настройки и
-                        проч.) используется технология <b>cookies</b>, с использованием которой Вы, вводя данные на
+                        проч.) применяется технология <b>cookies</b>, с использованием которой Вы, вводя данные на
                         сайте,
                         соглашаетесь.
                     </p><br>
@@ -291,17 +291,18 @@
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#content-week1"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">30 августа - 5
-                        сентября</button>
+                        type="button" role="tab" aria-controls="home" schedule_data="ФКЯиК 102/1"
+                        aria-selected="true">30 августа - 5 сентября</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#content-week2"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">6 - 12 сентября</button>
+                        type="button" role="tab" aria-controls="profile" schedule_data="ФКЯиК 102/1"
+                        aria-selected="false">6 - 12 сентября</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#content-week3"
-                        type="button" role="tab" aria-controls="contact" aria-selected="false">13 - 19
-                        сентября</button>
+                        type="button" role="tab" aria-controls="contact" schedule_data="ФКЯиК 102/1"
+                        aria-selected="false">13 - 19 сентября</button>
                 </li>
             </ul>
         </nav>
@@ -309,7 +310,7 @@
         <div class="tab-content" id="content-panel">
             <div class="tab-pane fade show active" id="content-week1" role="tabpanel" aria-labelledby="home-tab">
 
-                <div class="schedule container">
+                <div class="schedule container-lg">
                     <div class="day">
                         <div class="row day-title">
                             <div class="col-11">
@@ -321,7 +322,7 @@
                         </div>
                         <div class="row lesson">
                             <div class="col-2">
-                                <p></p>
+                                <p class="time"></p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">В этот день занятий нет</p>
@@ -336,7 +337,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -350,7 +351,7 @@
                         <hr class="same-time-les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -364,7 +365,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">18:15 - 19:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -389,7 +390,7 @@
                         </div>
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -403,7 +404,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -417,7 +418,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -431,7 +432,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -456,7 +457,7 @@
                         </div>
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -470,7 +471,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -484,7 +485,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>
@@ -498,7 +499,7 @@
                         <hr class="les-sep">
                         <div class="row lesson">
                             <div class="col-2">
-                                <p>8:15 - 9:45</p>
+                                <p class="time">8:15 - 9:45</p>
                             </div>
                             <div class="col-9">
                                 <p class="lesson-name">Практика устной и письменной речи</p>

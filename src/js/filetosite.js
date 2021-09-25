@@ -30,7 +30,14 @@ function XLS_to_JSON(file_in, to_dom = true) {
 
     const short_facult_name = {
         "факультета Кит.яз.": "ФКЯиК",
-        "факультета Меж.ком.": "ФМК"
+        "факультета Меж.ком.": "ФМК",
+        "факультета Англ.яз.": "ФАЯ",
+        "факультета Перев. ф-т": "ПФ",
+        "факультета магистр.": "М-ПФ(ИО)",
+        "факультета Перев И.О.": "ПФ(ИО)",
+        "факультета Нем.яз.": "ФНЯ",
+        "факультета ФРЯ (исп.)": "ФРЯ(И)",
+        "факультета ФРЯ (фр.)": "ФРЯ(Ф)"
     };
 
     function read_cell(wsh, cl) {
@@ -78,7 +85,7 @@ function XLS_to_JSON(file_in, to_dom = true) {
         //Students schedule
         json_result["info"]["type"] = "student";
         json_result["info"]["faculty"] = short_facult_name[read_cell(worksheet, "A1").match(/(?<=, ).+(?= на)/g)];
-        json_result["info"]["group"] = read_cell(worksheet, "C2").match(/.+(?= )/g)[0];
+        json_result["info"]["group"] = read_cell(worksheet, "C2").match(/\d+(\/\d+)?(?=(\s|$|\n))/g)[0];
 
         var day = undefined;
         var last_str = "";
@@ -173,7 +180,7 @@ function JSON_to_DOM(json_in) {
         + json_in["info"]["date"] + '</button></li>';
     $("ul.nav.nav-tabs[role='tablist']").append(new_tab);
 
-    new_tab = '<div class="tab-pane fade" id="content-xls' + xls_windows_opened + '" role="tabpanel" aria-labelledby="profile-tab"><div class="schedule container" id="xls-container"></div></div>';
+    new_tab = '<div class="tab-pane fade" id="content-xls' + xls_windows_opened + '" role="tabpanel" aria-labelledby="profile-tab"><div class="schedule container-lg" id="xls-container"></div></div>';
     $("div.tab-content#content-panel").append(new_tab);
 
     for (let day_raw in json_in) {
@@ -193,7 +200,7 @@ function JSON_to_DOM(json_in) {
         if (json_in[day_raw] == "") {
             $('div#content-xls' + xls_windows_opened + ' div.day#' + day).append('<div class="row lesson">' +
                 '<div class="col-2">' +
-                '    <p></p>' +
+                '    <p class="time"></p>' +
                 '</div>' +
                 '<div class="col-9">' +
                 '    <p class="lesson-name">В этот день занятий нет</p>' +
@@ -210,7 +217,7 @@ function JSON_to_DOM(json_in) {
             json_in[day_raw].forEach(function (lesson) {
                 $('div#content-xls' + xls_windows_opened + ' div.day#' + day).append('<div class="row lesson">' +
                     '<div class="col-2">' +
-                    '    <p>' + lesson["time"] + '</p>' +
+                    '    <p class="time">' + lesson["time"] + '</p>' +
                     '</div>' +
                     '<div class="col-9">' +
                     '    <p class="lesson-name">' + lesson["lesson_name"] + '</p>' +
@@ -229,5 +236,6 @@ function JSON_to_DOM(json_in) {
 
     $('.nav-tabs button.active').removeClass('active');
     $('span#title').text(data_str);
+    minusRemover();
     $('ul.nav-tabs li:last-child button').tab('show');
 }

@@ -5,6 +5,7 @@
 @app-yellow: #f0f01a;
 @app-white: #f8f9f8;
 @app-light-grey: #DFE0DF;
+@app-red: #dc3545;
 
 .app-grey-filter() {
     filter: invert(66%) sepia(5%) saturate(99%) hue-rotate(156deg) brightness(94%) contrast(92%);
@@ -12,6 +13,14 @@
 
 .app-white-filter() {
     filter: invert(99%) sepia(9%) saturate(0%) hue-rotate(241deg) brightness(120%) contrast(100%);
+}
+
+.app-light-grey-filter() {
+    filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(159deg) brightness(94%) contrast(88%);
+}
+
+.app-text-grey-filter() {
+    filter: invert(71%) sepia(0%) saturate(794%) hue-rotate(247deg) brightness(87%) contrast(92%);
 }
 
 .app-blue-filter() {
@@ -26,6 +35,10 @@
     filter: invert(13%) sepia(6%) saturate(707%) hue-rotate(131deg) brightness(94%) contrast(97%);
 }
 
+.app-red-filter() {
+    filter: invert(40%) sepia(90%) saturate(4514%) hue-rotate(335deg) brightness(89%) contrast(94%);
+}
+
 // Remove host's branding
 img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{ display: none !important; }
 
@@ -33,4 +46,39 @@ img {
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+}
+
+// ============ Modals ============
+p {
+    .info-list-marker {
+        .app-blue-filter;
+        margin-right: 2mm;
+        margin-left: 1mm;
+        margin-top: -1mm;
+    }
+    .danger-list-marker {
+        .info-list-marker;
+        .app-red-filter;
+    }
+}
+// ================================
+
+// =========== Navbar =============
+span#title {
+    display: inline-block;
+    max-width: 165px !important;
+}
+// ================================
+
+@media only screen and (max-device-width: 992px) {
+    max-width: 100% !important;
+    
+    div.schedule.container {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+p.time {
+    white-space: pre-line;
 }
