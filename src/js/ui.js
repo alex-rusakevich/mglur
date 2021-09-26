@@ -1,6 +1,6 @@
 /* Pure UI work */
 function minusRemover() {
-    if ($(window).width() < 702) {
+    if ($(window).width() < 715.0) {
         $("p.time").each(function () {
             var prev_text = $(this).text();
             $(this).text(prev_text.replace(/ - /, "\n"));
