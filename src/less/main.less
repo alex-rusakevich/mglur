@@ -82,3 +82,17 @@ span#title {
 p.time {
     white-space: pre-line;
 }
+
+ul.nav.nav-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+ul.nav.nav-tabs {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    position: relative;
+}

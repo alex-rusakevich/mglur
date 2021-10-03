@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "srv": "http-server ./ -p 3000"
   },
   "author": "Alexander Rusakevich",
   "license": "ISC",

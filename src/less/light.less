@@ -129,10 +129,12 @@ div#navbarSupportedContent li {
 
 li.nav-item button.nav-link.active {
     color: @app-white;
+}
 
-    -webkit-box-shadow: 0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
-    -moz-box-shadow:    0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
-    box-shadow:         0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
+ul.nav.nav-tabs {
+    -webkit-box-shadow: 0px 2px 0px 0px #fff !important;
+    -moz-box-shadow:    0px 2px 0px 0px #fff !important;
+    box-shadow:         0px 2px 0px 0px #fff !important;
 }
 
 ul.nav.nav-tabs {
@@ -212,15 +214,6 @@ div#content-panel {
 
 #date-panel {
     background-color: @app-light-grey;
-
-    .nav-tabs {
-        overflow-x: auto;
-        overflow-y: hidden;
-        flex-wrap: nowrap;
-        position: relative;
-
-        scrollbar-width: thin;
-    }
 
     .nav-tabs .nav-link {
         white-space: nowrap;

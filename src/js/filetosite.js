@@ -238,4 +238,5 @@ function JSON_to_DOM(json_in) {
     $('span#title').text(data_str);
     minusRemover();
     $('ul.nav-tabs li:last-child button').tab('show');
+    $('ul.nav-tabs li:last-child button')[0].scrollIntoView({ block: "nearest", behavior: "smooth" });
 }

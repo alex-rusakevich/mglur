@@ -13,7 +13,15 @@ function minusRemover() {
     }
 }
 
+function scroll_nav_into_view() {
+    $("button.nav-link").on("click", function () {
+        this.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+        $(this).parent('ul').get(0)
+    });
+}
+
 $('nav#date-panel').bind("DOMSubtreeModified", function () {
+    scroll_nav_into_view();
     $('nav#date-panel button').on('shown.bs.tab', function (e) { // Change title on tab change
         $('span#title').text($(e.target).attr("schedule_data"));
     });
@@ -67,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     minusRemover();
+    scroll_nav_into_view();
 });
 
 $('select#theme-select').on('change', function () {
