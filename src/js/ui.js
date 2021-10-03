@@ -32,11 +32,11 @@ $("a.navbar-brand").click(function (e) { // Scroll to top when navbar is clicked
     $("div#content-panel").animate({ scrollTop: 0 }, "slow");
 });
 
-$('#menu-button').click(function () {
+/* $('#menu-button').click(function () {
     /*
         transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
-    */
+    
 
     if ($(this).css("transform") == 'none') {
         $(this).css("transform", "rotate(180deg)");
@@ -45,7 +45,7 @@ $('#menu-button').click(function () {
         $(this).css("transform", "");
         $(this).css("-webkit-transform", "");
     }
-});
+}); */
 
 $('select').focus(function () {
     $(this).closest('div').find('p.select-caption').css("color", "#026fd5");

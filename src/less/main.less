@@ -7,6 +7,8 @@
 @app-light-grey: #DFE0DF;
 @app-red: #dc3545;
 
+@icon-transit-dur: 0.3s;
+
 .app-grey-filter() {
     filter: invert(66%) sepia(5%) saturate(99%) hue-rotate(156deg) brightness(94%) contrast(92%);
 }
@@ -96,3 +98,18 @@ ul.nav.nav-tabs {
     flex-wrap: nowrap;
     position: relative;
 }
+
+.navbar-toggler {
+    border: 0 !important; // 2px solid #212529 !important;
+    margin-right: -7px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+}
+
+/*.navbar-toggler:focus {
+    -webkit-box-shadow: inset 0px 0px 0px 50px @app-grey !important;
+    -moz-box-shadow:    inset 0px 0px 0px 50px @app-grey !important;
+    box-shadow:         inset 0px 0px 0px 50px @app-grey !important;
+
+    border: 2px solid @app-text-grey !important;
+}*/
