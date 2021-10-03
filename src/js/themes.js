@@ -33,9 +33,9 @@ function eraseCookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
-if (getCookie('theme') == 'light') {
-    loadCSS("static/css/light.css");
-} else {
-    setCookie('theme', 'dark', cookie_max_days);
+if (getCookie('theme') == 'dark') {
     loadCSS("static/css/dark.css");
+} else {
+    setCookie('theme', 'light', cookie_max_days);
+    loadCSS("static/css/light.css");
 }

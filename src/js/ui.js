@@ -54,10 +54,8 @@ $('select').focus(function () {
 $('select').blur(function () {
     if (getCookie("theme") == "dark") {
         $(this).closest('div').find('p.select-caption').css("color", "#9A9C9E");
-    } else if (getCookie("theme") == "light") {
+    } else { // Light, etc.
         $(this).closest('div').find('p.select-caption').css("color", "#1E2323");
-    } else {
-        $(this).closest('div').find('p.select-caption').css("color", "#9A9C9E");
     }
 });
 
