@@ -1,11 +1,12 @@
 {
   "name": "mglur",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Расписание МГЛУ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "srv": "http-server ./ -p 3000"
   },
   "author": "Alexander Rusakevich",
   "license": "ISC",

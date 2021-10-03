@@ -127,16 +127,22 @@ div#navbarSupportedContent li {
     display: inline-block;
 }
 
+li.nav-item button.nav-link {
+    margin-bottom: 0;
+}
+
 li.nav-item button.nav-link.active {
     color: @app-white;
-
-    -webkit-box-shadow: 0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
-    -moz-box-shadow:    0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
-    box-shadow:         0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
 }
 
 ul.nav.nav-tabs {
+    button.active {
+        -webkit-box-shadow: 0px 2px 0px 0px #fff !important;
+        -moz-box-shadow:    0px 2px 0px 0px #fff !important;
+        box-shadow:         0px 2px 0px 0px #fff !important;
+    }
     border-color: @app-white;
+    overflow: visible;
 }
 
 ul.dropdown-menu {
@@ -158,22 +164,6 @@ button.close-button {
         height: 14px;
     }
 }
-
-.navbar-toggler {
-    border: 0 !important;
-    margin-right: -3mm;
-
-    
-    transition-duration: 0.35s !important;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform !important;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
 // ================================
 
 // ===== Date (content) panels ====
@@ -194,7 +184,7 @@ div#content-panel {
     flex-wrap: nowrap;
     position: relative;
     scrollbar-width: thin;
-    height: calc(100% - 94px);
+    height: calc(100% - 95px);
     background-color: #fff;
 }
 
@@ -212,15 +202,6 @@ div#content-panel {
 
 #date-panel {
     background-color: @app-light-grey;
-
-    .nav-tabs {
-        overflow-x: auto;
-        overflow-y: hidden;
-        flex-wrap: nowrap;
-        position: relative;
-
-        scrollbar-width: thin;
-    }
 
     .nav-tabs .nav-link {
         white-space: nowrap;
@@ -252,8 +233,6 @@ a.dropdown-item:active {
     width: 24px;
     height: 24px;
 }
-
-@icon-transit-dur: 0.3s;
 
 img.file-icon:hover {
     .app-grey-filter();

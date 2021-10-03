@@ -123,10 +123,12 @@ div#navbarSupportedContent li {
 }
 
 li.nav-item button.nav-link.active {
-    -webkit-box-shadow: 0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
-    -moz-box-shadow:    0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
-    box-shadow:         0px 2px 0px 0px rgba(248, 249, 248, 1) !important;
+    border-color: @app-white;
     background-color: @app-white;
+}
+
+li.nav-item button.nav-link:hover {
+    border-color: @app-white;
 }
 
 ul.nav.nav-tabs {
@@ -152,22 +154,6 @@ button.close-button {
         height: 14px;
     }
 }
-
-.navbar-toggler {
-    border: 0 !important;
-    margin-right: -3mm;
-
-    
-    transition-duration: 0.35s !important;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform !important;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
 // ================================
 
 // ===== Date (content) panels ====
@@ -188,7 +174,7 @@ div#content-panel {
     flex-wrap: nowrap;
     position: relative;
     scrollbar-width: thin;
-    height: calc(100% - 94px);
+    height: calc(100% - 95px);
 }
 
 .nav-tabs > li.active > a {
@@ -200,20 +186,17 @@ div#content-panel {
 
 .nav.nav-tabs {
     margin-top: 3px;
-    border-bottom-width: 3px;
+    border-bottom-width: 2px;
     border-bottom-color: @app-white;
 }
 
+ul.nav.nav-tabs {
+    -webkit-box-shadow: inset 0px -1px 0px 0px @app-white;
+    -moz-box-shadow:    inset 0px -1px 0px 0px @app-white;
+    box-shadow:         inset 0px -1px 0px 0px @app-white;
+}
+
 #date-panel {
-    .nav-tabs {
-        overflow-x: auto;
-        overflow-y: hidden;
-        flex-wrap: nowrap;
-        position: relative;
-
-        scrollbar-width: thin;
-    }
-
     .nav-tabs .nav-link {
         white-space: nowrap;
     }
@@ -238,8 +221,6 @@ a.dropdown-item:active {
     width: 24px;
     height: 24px;
 }
-
-@icon-transit-dur: 0.3s;
 
 img.file-icon:hover {
     .app-white-filter;

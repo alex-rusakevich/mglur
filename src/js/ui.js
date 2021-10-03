@@ -1,6 +1,6 @@
 /* Pure UI work */
 function minusRemover() {
-    if ($(window).width() < 702) {
+    if ($(window).width() < 715.0) {
         $("p.time").each(function () {
             var prev_text = $(this).text();
             $(this).text(prev_text.replace(/ - /, "\n"));
@@ -13,7 +13,15 @@ function minusRemover() {
     }
 }
 
+function scroll_nav_into_view() {
+    $("button.nav-link").on("click", function () {
+        this.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+        $(this).parent('ul').get(0)
+    });
+}
+
 $('nav#date-panel').bind("DOMSubtreeModified", function () {
+    scroll_nav_into_view();
     $('nav#date-panel button').on('shown.bs.tab', function (e) { // Change title on tab change
         $('span#title').text($(e.target).attr("schedule_data"));
     });
@@ -24,11 +32,11 @@ $("a.navbar-brand").click(function (e) { // Scroll to top when navbar is clicked
     $("div#content-panel").animate({ scrollTop: 0 }, "slow");
 });
 
-$('#menu-button').click(function () {
+/* $('#menu-button').click(function () {
     /*
         transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
-    */
+    
 
     if ($(this).css("transform") == 'none') {
         $(this).css("transform", "rotate(180deg)");
@@ -37,7 +45,7 @@ $('#menu-button').click(function () {
         $(this).css("transform", "");
         $(this).css("-webkit-transform", "");
     }
-});
+}); */
 
 $('select').focus(function () {
     $(this).closest('div').find('p.select-caption').css("color", "#026fd5");
@@ -46,10 +54,8 @@ $('select').focus(function () {
 $('select').blur(function () {
     if (getCookie("theme") == "dark") {
         $(this).closest('div').find('p.select-caption').css("color", "#9A9C9E");
-    } else if (getCookie("theme") == "light") {
+    } else { // Light, etc.
         $(this).closest('div').find('p.select-caption').css("color", "#1E2323");
-    } else {
-        $(this).closest('div').find('p.select-caption').css("color", "#9A9C9E");
     }
 });
 
@@ -67,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     minusRemover();
+    scroll_nav_into_view();
 });
 
 $('select#theme-select').on('change', function () {
