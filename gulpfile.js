@@ -1,6 +1,7 @@
 var gulp = require("gulp");
 var less = require("gulp-less");
 var path = require("path");
+var fs = require("fs");
 var cleanCSS = require("gulp-clean-css");
 var htmlmin = require("gulp-htmlmin");
 var uglify = require("gulp-uglify");
@@ -16,9 +17,13 @@ gulp.task("less", function () {
 });
 
 gulp.task("html-min", function () {
+    var proj_version = JSON.parse(fs.readFileSync('package.json', 'utf8'))["version"];
     return gulp.src(["./src/*.html"])
         .pipe(nunj_render({
-            path: ['./src/templates']
+            path: ['./src/templates'],
+            data: {
+                version: proj_version
+            }
         }))
         .pipe(htmlmin({ collapseWhitespace: true, minifyCSS: true }))
         .pipe(gulp.dest("./"));
