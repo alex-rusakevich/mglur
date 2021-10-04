@@ -93,10 +93,27 @@ ul.nav.nav-tabs {
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 
-    overflow-x: auto;
+    margin-top: 0 !important;
     overflow-y: hidden;
     flex-wrap: nowrap;
     position: relative;
+}
+
+ul.nav.nav-tabs > li {
+    box-shadow: 0 3px 0 0 #fff!important;
+    transition-property: box-shadow;
+    transition-duration: 0ms;
+}
+
+ul.nav.nav-tabs > li:active {
+    box-shadow: 0 3px 0 0 #fff!important;
+    transition-property: box-shadow;
+    transition-duration: 0ms;
+}
+
+div#nav-tabs-wrapper {
+    margin-top: 3px;
+    overflow-x: hidden;
 }
 
 .navbar-toggler {
