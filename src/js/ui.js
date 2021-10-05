@@ -1,4 +1,33 @@
 /* Pure UI work */
+function accessibility() {
+    var nav_items = $('li.nav-item.icon-nav a');
+    nav_items.attr("tabindex", "0");
+    nav_items.attr("role", "button");
+
+    var file_icon = $('img.file-icon');
+    file_icon.attr("role", "button");
+    file_icon.attr("tabindex", "0");
+    file_icon.attr("alt", "З");
+    file_icon.keyup(function (event) {
+        event.preventDefault();
+
+        if (event.which === 13 || event.which === 32) {
+            $(this)[0].click();
+        }
+    });
+
+    $('img[src="static/img/logo.png"]').attr('alt', 'Р');
+
+    nav_items.keyup(function (event) {
+        if (event.which === 13 || event.which == 32) {
+            event.preventDefault();
+            $(this)[0].click();
+        }
+    });
+
+    $('img[src="static/img/close-button.svg"]').attr("alt", "X")
+}
+
 function minusRemover() {
     if ($(window).width() < 715.0) {
         $("p.time").each(function () {
@@ -20,11 +49,20 @@ function scroll_nav_into_view() {
     });
 }
 
+function bind_notepad() {
+    $('img.file-icon').off().on('click', function (e) {
+        alert(e.type);
+    });
+}
+
 $('nav#date-panel').bind("DOMSubtreeModified", function () {
     scroll_nav_into_view();
     $('nav#date-panel button').on('shown.bs.tab', function (e) { // Change title on tab change
         $('span#title').text($(e.target).attr("schedule_data"));
     });
+
+    bind_notepad();
+    accessibility();
 });
 
 $("a.navbar-brand").click(function (e) { // Scroll to top when navbar is clicked
@@ -59,6 +97,7 @@ $('select').blur(function () {
     }
 });
 
+/* Themes work */
 document.addEventListener("DOMContentLoaded", function () {
     if (getCookie("theme") == "dark") {
         $("select#theme-select", this).html("<option value='dark' selected='selected'>Тёмная</option>" +
@@ -74,6 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     minusRemover();
     scroll_nav_into_view();
+    bind_notepad();
+    accessibility();
 });
 
 $('select#theme-select').on('change', function () {
@@ -88,6 +129,7 @@ $('select#theme-select').on('change', function () {
 if (getCookie('theme') == 'light') {
     $('div.bg-dark').removeClass('bg-dark');
 }
+/* ============================================== */
 
 //Pull to refresh
 const ptr = PullToRefresh.init({
