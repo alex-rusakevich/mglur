@@ -234,9 +234,14 @@ function JSON_to_DOM(json_in) {
         }
     }
 
+    // Reaction on UI
     $('.nav-tabs button.active').removeClass('active');
     $('span#title').text(data_str);
+
     minusRemover();
+    bind_notepad();
+    accessibility();
+
     $('ul.nav-tabs li:last-child button').tab('show');
     $('ul.nav-tabs li:last-child button')[0].scrollIntoView({ block: "nearest", behavior: "smooth" });
 }

@@ -51,7 +51,7 @@ function scroll_nav_into_view() {
 
 function bind_notepad() {
     $('img.file-icon').off().on('click', function (e) {
-        alert(e.type);
+
     });
 }
 
@@ -60,9 +60,6 @@ $('nav#date-panel').bind("DOMSubtreeModified", function () {
     $('nav#date-panel button').on('shown.bs.tab', function (e) { // Change title on tab change
         $('span#title').text($(e.target).attr("schedule_data"));
     });
-
-    bind_notepad();
-    accessibility();
 });
 
 $("a.navbar-brand").click(function (e) { // Scroll to top when navbar is clicked
