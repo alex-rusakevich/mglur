@@ -113,7 +113,13 @@ ul.nav.nav-tabs > li:active {
 
 div#nav-tabs-wrapper {
     margin-top: 3px;
-    overflow-x: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+div#nav-tabs-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .navbar-toggler {

@@ -18,11 +18,11 @@
         <script src="static/js/themes.js"></script>
 
         <!-- Info modal -->
-        <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="info-modal-label" aria-hidden="true">
+        <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="info-modal-label" aria-hidden="true" aria-modal="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Информация об "МГЛУ.Расписании"</h5>
+                        <h5 class="modal-title">Информация об "МГЛУ.Расписании"</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -63,11 +63,11 @@
             </div>
 
             <!-- Group modal -->
-            <div class="modal fade" id="add-group-modal" tabindex="-1" aria-labelledby="add-group-modal" aria-hidden="true">
+            <div class="modal fade" id="add-group-modal" tabindex="-1" aria-labelledby="add-group-modal" aria-hidden="true" aria-modal="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Добавить группу</h5>
+                            <h5 class="modal-title">Добавить группу</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -120,11 +120,11 @@
             </div>
 
             <!-- Teacher modal -->
-            <div class="modal fade" id="add-teacher-modal" tabindex="-1" aria-labelledby="add-teacher-modal" aria-hidden="true">
+            <div class="modal fade" id="add-teacher-modal" tabindex="-1" aria-labelledby="add-teacher-modal" aria-hidden="true" aria-modal="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Добавить преподавателя</h5>
+                            <h5 class="modal-title">Добавить преподавателя</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -141,11 +141,11 @@
             </div>
 
             <!-- Settings modal -->
-            <div class="modal fade" id="settings-modal" tabindex="-1" aria-labelledby="settings-modal" aria-hidden="true">
+            <div class="modal fade" id="settings-modal" tabindex="-1" aria-labelledby="settings-modal" aria-hidden="true" aria-modal="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Настройки</h5>
+                            <h5 class="modal-title">Настройки</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -166,7 +166,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="delete-item-modal" tabindex="-1" aria-labelledby="delete-item-modal" aria-hidden="true">
+            <div class="modal fade" id="delete-item-modal" tabindex="-1" aria-labelledby="delete-item-modal" aria-hidden="true" aria-modal="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -184,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="data-xls-modal" tabindex="-1" aria-labelledby="data-xls-modal" aria-hidden="true">
+            <div class="modal fade" id="data-xls-modal" tabindex="-1" aria-labelledby="data-xls-modal" aria-hidden="true" aria-modal="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -218,11 +218,11 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item dropdown icon-nav">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    <a class="nav-link dropdown-toggle" href="#" id="group_dd" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="static/img/people.svg">Группы
-                            </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                        <img src="static/img/people.svg" alt="Г">Группы
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="group_dd">
                                         <li>
                                             <a class="dropdown-item" href="#">ФКЯиК 202/1<button type="button"
                                             class="close-button"><img src="static/img/close-button.svg"></button>
@@ -244,11 +244,11 @@
                                 </li>
 
                                 <li class="nav-item dropdown icon-nav">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    <a class="nav-link dropdown-toggle" href="#" id="teacher_dd" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="static/img/person-fill.svg">Преподаватели
+                                        <img src="static/img/person-fill.svg" alt="П">Преподаватели
                             </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="teacher_dd">
                                         <li>
                                             <a class="dropdown-item" href="#">И. Иванов<button type="button"
                                             class="close-button"><img src="static/img/close-button.svg"></button>
@@ -271,15 +271,15 @@
 
                                 <li class="nav-item icon-nav">
                                     <a class="nav-link" data-bs-toggle="modal" data-bs-target="#settings-modal"><img
-                                    src="static/img/gear.svg">Настройки</a>
+                                    src="static/img/gear.svg" alt="Н">Настройки</a>
                                 </li>
 
                                 <li class="nav-item dropdown icon-nav">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    <a class="nav-link dropdown-toggle" href="#" id="extra_dd" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="static/img/three-dots.svg">Дополнительно
+                                        <img src="static/img/three-dots.svg" alt="Д">Дополнительно
                             </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="extra_dd">
                                         <li>
                                             <a class="dropdown-item" data-bs-toggle="modal"
                                         data-bs-target="#data-xls-modal">Добавить из .xls-файла</a>
@@ -289,7 +289,7 @@
 
                                 <li class="nav-item icon-nav">
                                     <a class="nav-link" data-bs-toggle="modal" data-bs-target="#info-modal"><img
-                                    src="static/img/info-circle.svg">Информация</a>
+                                    src="static/img/info-circle.svg" alt="И">Информация</a>
                                 </li>
                             </ul>
                         </div>
@@ -539,14 +539,14 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
 
-        <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"></script>
-        <script lang="javascript" src="static/js/ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"></script>
+        <script src="static/js/ui.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-        <script lang="javascript" src="static/js/filetosite.js"></script>
+        <script src="static/js/filetosite.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script lang="javascript" src="static/js/request.js"></script>
+        <script src="static/js/request.js"></script>
 
     </body>
 
