@@ -2,10 +2,11 @@
 
 // ========= Global CSS ===========
 body {
-    background-color: @app-dark-grey !important;
+    background-color: @app-dark-grey  !important;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     overflow: hidden;
 }
@@ -15,7 +16,7 @@ p {
     margin-bottom: 0 !important;
 }
 
-button {  
+button {
     box-shadow: none !important;
 }
 
@@ -40,6 +41,7 @@ button {
         padding-right: 5mm;
     }
 }
+
 // ================================
 
 // ===== Modal window styling =====
@@ -84,6 +86,7 @@ div.modal-content {
 button.btn-primary {
     background-color: @app-blue;
 }
+
 // ================================
 
 // ======== Navbar styling ========
@@ -111,7 +114,7 @@ div#navbarSupportedContent li {
 .icon-nav img {
     .app-grey-filter;
 
-    display: inline-block; 
+    display: inline-block;
     width: 18px;
     height: 18px;
     margin-bottom: 5px;
@@ -154,6 +157,7 @@ button.close-button {
         height: 14px;
     }
 }
+
 // ================================
 
 // ===== Date (content) panels ====
@@ -162,7 +166,7 @@ button.close-button {
     max-width: 960px;
     height: 100%;
 
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 div.row.lesson {
@@ -177,7 +181,7 @@ div#content-panel {
     height: calc(100% - 94px);
 }
 
-.nav-tabs > li.active > a {
+.nav-tabs>li.active>a {
     background-color: #212529;
     border-bottom: 0px;
     margin-bottom: 0px;
@@ -192,8 +196,8 @@ div#content-panel {
 
 ul.nav.nav-tabs {
     -webkit-box-shadow: inset 0px -1px 0px 0px @app-white;
-    -moz-box-shadow:    inset 0px -1px 0px 0px @app-white;
-    box-shadow:         inset 0px -1px 0px 0px @app-white;
+    -moz-box-shadow: inset 0px -1px 0px 0px @app-white;
+    box-shadow: inset 0px -1px 0px 0px @app-white;
 }
 
 #date-panel {
@@ -211,8 +215,9 @@ ul.nav.nav-tabs {
 }
 
 a.dropdown-item:active {
-    background-color: @app-blue !important;
+    background-color: @app-blue  !important;
 }
+
 // ================================
 
 // ======= Styling notes icon =====
@@ -230,6 +235,7 @@ img.file-icon:hover {
 img.file-icon {
     transition-duration: @icon-transit-dur;
 }
+
 // ================================
 
 // ======== Styling schedule ======
@@ -286,6 +292,7 @@ div.lesson {
 .lesson {
     padding-right: 3mm;
 }
+
 // ================================
 
 // ====== Custom scrollbar ========
@@ -293,40 +300,51 @@ div.lesson {
     width: 8px;
     height: 8px;
 }
+
 ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #e1e1e1;
     border: 0px none #ffffff;
     border-radius: 50px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #ffffff;
 }
+
 ::-webkit-scrollbar-thumb:active {
     background: #000000;
 }
+
 ::-webkit-scrollbar-track {
     background: #666666;
     border: 0px none #ffffff;
     border-radius: 50px;
 }
+
 ::-webkit-scrollbar-track:hover {
     background: #666666;
 }
+
 ::-webkit-scrollbar-track:active {
     background: #333333;
 }
+
 ::-webkit-scrollbar-corner {
     background: transparent;
 }
+
 // ================================
 
 div.ptr--ptr {
     background-color: @app-dark-grey;
-    .ptr--text, .ptr--icon {
-        color: @app-text-grey !important;
+
+    .ptr--text,
+    .ptr--icon {
+        color: @app-text-grey  !important;
     }
 }

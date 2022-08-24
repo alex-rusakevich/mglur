@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "npx npm-force-resolutions",
-    "srv": "http-server ./ -p 3000"
+    "srv": "http-server ./ -p 3000",
+    "watch": "gulp watch",
+    "dev": "pipenv run devsrv.py",
+    "prod": "waitress-serve --port=8051 wsgi:app"
   },
   "author": "Alexander Rusakevich",
   "license": "ISC",
