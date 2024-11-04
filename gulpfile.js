@@ -28,9 +28,9 @@ gulp.task("html-min", function () {
         .pipe(gulp.dest("./"));
 });
 
-gulp.task("js-min", function () {
+gulp.task("js-min", async function () {
     gulp.src(["./src/js/*.js"])
-        .pipe(minify())
+        .pipe(minify({}))
         .pipe(gulp.dest("./static/js"))
 });
 
