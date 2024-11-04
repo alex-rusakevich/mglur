@@ -2,7 +2,7 @@
   "name": "mglur",
   "version": "0.3.3",
   "description": "Расписание МГЛУ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "npx npm-force-resolutions",
@@ -10,18 +10,15 @@
   },
   "author": "Alexander Rusakevich",
   "license": "ISC",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^4.3.0",
+  "resolutions": {},
+  "dependencies": {
+    "express": "^4.21.1",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-less": "^5.0.0",
+    "gulp-minify": "^3.1.0",
     "gulp-nunjucks-render": "^2.2.3",
-    "gulp-uglify": "^3.0.2",
-    "http-server": "^14.0.0",
-    "less": "^4.1.1",
-    "nunjucks": "^3.2.3"
-  },
-  "resolutions": {
-    "graceful-fs": "^4.2.4"
+    "less": "^4.2.0"
   }
 }

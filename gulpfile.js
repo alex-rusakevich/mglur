@@ -2,17 +2,16 @@ var gulp = require("gulp");
 var less = require("gulp-less");
 var path = require("path");
 var fs = require("fs");
-var cleanCSS = require("gulp-clean-css");
 var htmlmin = require("gulp-htmlmin");
-var uglify = require("gulp-uglify");
+const minify = require('gulp-minify');
 var nunj_render = require("gulp-nunjucks-render");
+
 
 gulp.task("less", function () {
     return gulp.src("./src/less/**/*.less")
         .pipe(less({
             paths: [path.join(__dirname, "less", "includes")]
         }))
-        .pipe(cleanCSS({ compatibility: "ie8" }))
         .pipe(gulp.dest("./static/css"));
 });
 
@@ -31,6 +30,7 @@ gulp.task("html-min", function () {
 
 gulp.task("js-min", function () {
     gulp.src(["./src/js/*.js"])
+        .pipe(minify())
         .pipe(gulp.dest("./static/js"))
 });
 
@@ -40,4 +40,4 @@ gulp.task("watch", function () {
     gulp.watch(["./src/*.html", "./src/templates/*.njk"], ["html-min"]);
 });
 
-gulp.task("default", ["less", "js-min", "html-min"]);
+gulp.task("default", gulp.parallel('less', 'js-min', "html-min"));
