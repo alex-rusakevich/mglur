@@ -1,10 +1,12 @@
 const cookie_max_days = 10 * 365;
 
 function loadCSS(file) {
+    let url_prefix = document.querySelector("input[name='url_prefix']").value;
+
     var link = document.createElement("link");
     link.setAttribute("rel", "stylesheet");
     link.setAttribute("type", "text/css");
-    link.setAttribute("href", file);
+    link.setAttribute("href", `${url_prefix}/static/css/${file}`);
     document.getElementsByTagName("head")[0].appendChild(link)
 }
 
@@ -33,9 +35,18 @@ function eraseCookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
-if (getCookie('theme') == 'dark') {
-    loadCSS("static/css/dark.css");
-} else {
-    setCookie('theme', 'light', cookie_max_days);
-    loadCSS("static/css/light.css");
+function setTheme(){
+    if (getCookie('theme') == 'dark') {
+        loadCSS("dark.css");
+    } else {
+        setCookie('theme', 'light', cookie_max_days);
+        loadCSS("light.css");
+    }
+}
+
+if(document.readyState === "interactive") {
+    setTheme();
+}
+else {
+    window.addEventListener("DOMContentLoaded", setTheme);
 }

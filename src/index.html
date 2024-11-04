@@ -7,8 +7,8 @@
 
     <title>Расписание МГЛУ</title>
 
-    <link rel="icon" type="image/png" href="static/img/logo.png">
-    <link rel="apple-touch-icon" href="static/img/logo.png">
+    <link rel="icon" type="image/png" href="{{url_prefix}}/static/img/logo.png">
+    <link rel="apple-touch-icon" href="{{url_prefix}}/static/img/logo.png">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     {{ prel.preloader('#1E2323', 'filter: invert(71%) sepia(0%) saturate(794%) hue-rotate(247deg) brightness(87%)
     contrast(92%);') }}
 
-    <script src="static/js/themes.js"></script>
+    <script src="{{url_prefix}}/static/js/themes.js"></script>
 
     <!-- Info modal -->
     <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="info-modal-label" aria-hidden="true"
@@ -28,14 +28,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><img class="info-list-marker" src="static/img/info-list-marker.svg">Сайт создан Александром
+                    <p><img class="info-list-marker" src="{{url_prefix}}/static/img/info-list-marker.svg">Сайт создан Александром
                         Русакевичем, весь исходный
                         код открыт для редактирования и располагается
                         на
                         <a href="https://github.com/alex-rusakevich/mglur">github</a>.
                     </p><br>
                     <p>Фон создан Валентиной Лучановой.</p><br>
-                    <p><img class="info-list-marker" src="static/img/info-list-marker.svg">Расписание за прошедшие дни
+                    <p><img class="info-list-marker" src="{{url_prefix}}/static/img/info-list-marker.svg">Расписание за прошедшие дни
                         можно получить:
                     <p>Учащимся - <a
                             href="http://raspisanie.mslu.by/schedule/reports/publicreports/schedulelistforgroupreport">по
@@ -46,7 +46,7 @@
                             этой</a>
                     </p><br>
                     <p>
-                        <img class="danger-list-marker" src="static/img/info-list-marker.svg">Сайтом для сохранения
+                        <img class="danger-list-marker" src="{{url_prefix}}/static/img/info-list-marker.svg">Сайтом для сохранения
                         введенной Вами информации (номер группы, имя преподавателя, настройки и
                         проч.) применяется технология <b>cookies</b>, с использованием которой Вы, вводя данные на
                         сайте,
@@ -217,7 +217,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="app_navbar">
             <div class="container-fluid" id="cont_fl">
                 <a class="navbar-brand" href="#">
-                    <img src="static/img/logo.png" id="logo_img">
+                    <img src="{{url_prefix}}/static/img/logo.png" id="logo_img">
                     <span id="title">ФКЯиК 102/1</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -230,17 +230,17 @@
                         <li class="nav-item dropdown icon-nav">
                             <a class="nav-link dropdown-toggle" href="#" id="group_dd" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="static/img/people.svg" alt="Г">Группы
+                                <img src="{{url_prefix}}/static/img/people.svg" alt="Г">Группы
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="group_dd">
                                 <li>
                                     <a class="dropdown-item" href="#">ФКЯиК 202/1<button type="button"
-                                            class="close-button"><img src="static/img/close-button.svg"></button>
+                                            class="close-button"><img src="{{url_prefix}}/static/img/close-button.svg"></button>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">ФКЯиК 202/1<button type="button"
-                                            class="close-button"><img src="static/img/close-button.svg"></button>
+                                            class="close-button"><img src="{{url_prefix}}/static/img/close-button.svg"></button>
                                     </a>
                                 </li>
                                 <li>
@@ -256,17 +256,17 @@
                         <li class="nav-item dropdown icon-nav">
                             <a class="nav-link dropdown-toggle" href="#" id="teacher_dd" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="static/img/person-fill.svg" alt="П">Преподаватели
+                                <img src="{{url_prefix}}/static/img/person-fill.svg" alt="П">Преподаватели
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="teacher_dd">
                                 <li>
                                     <a class="dropdown-item" href="#">И. Иванов<button type="button"
-                                            class="close-button"><img src="static/img/close-button.svg"></button>
+                                            class="close-button"><img src="{{url_prefix}}/static/img/close-button.svg"></button>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">П. Петров<button type="button"
-                                            class="close-button"><img src="static/img/close-button.svg"></button>
+                                            class="close-button"><img src="{{url_prefix}}/static/img/close-button.svg"></button>
                                     </a>
                                 </li>
                                 <li>
@@ -281,13 +281,13 @@
 
                         <li class="nav-item icon-nav">
                             <a class="nav-link" data-bs-toggle="modal" data-bs-target="#settings-modal"><img
-                                    src="static/img/gear.svg" alt="Н">Настройки</a>
+                                    src="{{url_prefix}}/static/img/gear.svg" alt="Н">Настройки</a>
                         </li>
 
                         <li class="nav-item dropdown icon-nav">
                             <a class="nav-link dropdown-toggle" href="#" id="extra_dd" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="static/img/three-dots.svg" alt="Д">Дополнительно
+                                <img src="{{url_prefix}}/static/img/three-dots.svg" alt="Д">Дополнительно
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="extra_dd">
                                 <li>
@@ -299,7 +299,7 @@
 
                         <li class="nav-item icon-nav">
                             <a class="nav-link" data-bs-toggle="modal" data-bs-target="#info-modal"><img
-                                    src="static/img/info-circle.svg" alt="И">Информация</a>
+                                    src="{{url_prefix}}/static/img/info-circle.svg" alt="И">Информация</a>
                         </li>
                     </ul>
                 </div>
@@ -338,7 +338,7 @@
                                 <p class="day-text">Понедельник</p>
                             </div>
                             <div class="col-1">
-                                <img src="static/img/file-icon.svg" class="icon-filter file-icon file-icon">
+                                <img src="{{url_prefix}}/static/img/file-icon.svg" class="icon-filter file-icon file-icon">
                             </div>
                         </div>
                         <div class="row lesson">
@@ -406,7 +406,7 @@
                                 <p class="day-text">Вторник</p>
                             </div>
                             <div class="col-1">
-                                <img src="static/img/file-icon.svg" class="icon-filter file-icon">
+                                <img src="{{url_prefix}}/static/img/file-icon.svg" class="icon-filter file-icon">
                             </div>
                         </div>
                         <div class="row lesson">
@@ -472,7 +472,7 @@
                                 <p class="day-text">Среда</p>
                             </div>
                             <div class="col-1">
-                                <img src="static/img/file-icon.svg" class="icon-filter file-icon">
+                                <img src="{{url_prefix}}/static/img/file-icon.svg" class="icon-filter file-icon">
                             </div>
                         </div>
                         <div class="row lesson">
@@ -536,9 +536,9 @@
 
             </div>
             <div class="tab-pane fade" id="content-week2" role="tabpanel" aria-labelledby="profile-tab"><img
-                    src="static/img/logo.png" id="week2"></div>
+                    src="{{url_prefix}}/static/img/logo.png" id="week2"></div>
             <div class="tab-pane fade" id="content-week3" role="tabpanel" aria-labelledby="contact-tab"><img
-                    src="static/img/logo.png" id="week3"></div>
+                    src="{{url_prefix}}/static/img/logo.png" id="week3"></div>
         </div>
     </div>
 
@@ -550,14 +550,15 @@
         crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pulltorefreshjs/0.1.22/index.umd.min.js"></script>
-    <script src="static/js/ui.js"></script>
+    <script src="{{url_prefix}}/static/js/ui.js"></script> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-    <script src="static/js/filetosite.js"></script>
+    <script src="{{url_prefix}}/static/js/filetosite.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="static/js/request.js"></script>
+    <script src="{{url_prefix}}/static/js/request.js"></script>
 
+    <input type="hidden" name="url_prefix" value="{{url_prefix}}">
 </body>
 
 </html>

@@ -7,6 +7,8 @@ const minify = require('gulp-minify');
 var nunj_render = require("gulp-nunjucks-render");
 
 
+require('dotenv').config()
+
 gulp.task("less", function () {
     return gulp.src("./src/less/**/*.less")
         .pipe(less({
@@ -17,11 +19,13 @@ gulp.task("less", function () {
 
 gulp.task("html-min", function () {
     var proj_version = JSON.parse(fs.readFileSync('package.json', 'utf8'))["version"];
+
     return gulp.src(["./src/*.html"])
         .pipe(nunj_render({
             path: ['./src/templates'],
             data: {
-                version: proj_version
+                version: proj_version,
+                url_prefix: process.env.URL_PREFIX || ""
             }
         }))
         .pipe(htmlmin({ collapseWhitespace: true, minifyCSS: true }))
@@ -35,9 +39,9 @@ gulp.task("js-min", async function () {
 });
 
 gulp.task("watch", function () {
-    gulp.watch("./src/less/**/*.less", ["less"]);
-    gulp.watch("./src/js/*.js", ["js-min"]);
-    gulp.watch(["./src/*.html", "./src/templates/*.njk"], ["html-min"]);
+    gulp.watch("./src/less/**/*.less", gulp.series("less"));
+    gulp.watch("./src/js/*.js", gulp.series("js-min"));
+    gulp.watch(["./src/*.html", "./src/templates/*.njk"], gulp.series("html-min"));
 });
 
 gulp.task("default", gulp.parallel('less', 'js-min', "html-min"));
