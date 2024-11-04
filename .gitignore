@@ -1,6 +1,5 @@
 node_modules/
 ftp_up.bat
-pnpm-lock.yaml
 static/
 /index.html
 .env

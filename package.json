@@ -4,13 +4,10 @@
   "description": "Расписание МГЛУ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npx npm-force-resolutions",
-    "srv": "http-server ./ -p 3000"
+    "srv": "node server.js"
   },
   "author": "Alexander Rusakevich",
   "license": "ISC",
-  "resolutions": {},
   "dependencies": {
     "express": "^4.21.1"
   },
