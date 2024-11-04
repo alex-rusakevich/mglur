@@ -12,13 +12,13 @@ router.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-app.use((req, res, next) => {
-    if (!req.secure && process.env.NODE_ENV == "production") {
-        res.redirect('https://' + req.headers.host + req.url)
-    } else {
-        next()
-    }
-})
+// app.use((req, res, next) => {
+//     if (!req.secure && process.env.NODE_ENV == "production") {
+//         res.redirect('https://' + req.headers.host + req.url)
+//     } else {
+//         next()
+//     }
+// })
 
 app.use(process.env.URL_PREFIX || "", router);
 
