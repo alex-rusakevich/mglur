@@ -1,5 +1,4 @@
 node_modules/
 ftp_up.bat
-static/
 /index.html
 .env
